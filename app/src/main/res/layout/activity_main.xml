@@ -11,10 +11,13 @@
         android:id="@+id/header"
         layout="@layout/header" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="90dp"
+        android:id="@+id/button"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        />
+        android:gravity="center_vertical"
+        android:text="VERIFY THUMB TRACING" />
 
 </LinearLayout>
