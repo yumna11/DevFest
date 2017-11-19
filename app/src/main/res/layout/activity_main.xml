@@ -12,12 +12,16 @@
         layout="@layout/header" />
 
     <Button
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="90dp"
         android:id="@+id/button"
-        android:layout_width="230dp"
+        android:layout_width="233dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/button_shape"
         android:gravity="center_vertical"
-        android:text="VERIFY THUMB TRACING" />
+        android:padding="16dp"
+        android:textAlignment="center"
+        android:text="VERIFY THUMB TRACING"
+        android:textColor="@android:color/black" />
 
 </LinearLayout>

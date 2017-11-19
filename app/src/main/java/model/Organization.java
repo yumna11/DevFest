@@ -5,14 +5,14 @@ package model;
  */
 
 public class Organization {
-    private String detail,address,contact,longitude,latitude,name;
+    private String details,address,contact,longitude,latitude,name;
 
-    public String getDetail() {
-        return detail;
+    public String getDetails() {
+        return details;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
+    public void setDetails(String details) {
+        this.details = details;
     }
 
     public String getAddress() {

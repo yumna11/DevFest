@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -47,7 +48,8 @@ public class OrganizationList extends Activity {
             @Override
             protected void populateViewHolder(final OrganizationViewHolder viewHolder, final Organization model, final int position) {
                 viewHolder.orgName.setText(model.getName());
-                viewHolder.orgDetail.setText(model.getDetail());
+                viewHolder.orgDetail.setText(model.getAddress());
+
 
                 final Organization org = model;
                 viewHolder.setItemClickListener(new ItemClickListener() {

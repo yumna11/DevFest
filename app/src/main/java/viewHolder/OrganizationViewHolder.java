@@ -21,7 +21,7 @@ public class OrganizationViewHolder extends RecyclerView.ViewHolder implements V
     public OrganizationViewHolder(View itemView) {
         super(itemView);
         this.orgName = (TextView) itemView.findViewById(R.id.org_name);
-        this.orgDetail = (TextView) itemView.findViewById(R.id.org_detail);
+        this.orgDetail = (TextView) itemView.findViewById(R.id.organization_detail);
         itemView.setOnClickListener(this);
     }
     public void setItemClickListener(ItemClickListener itemClickListener)

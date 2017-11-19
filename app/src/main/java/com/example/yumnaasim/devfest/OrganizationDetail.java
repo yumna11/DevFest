@@ -1,8 +1,13 @@
 package com.example.yumnaasim.devfest;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import model.Organization;
 
-public class OrganizationDetail extends AppCompatActivity {
+public class OrganizationDetail extends Activity {
     TextView orgName, orgDetail,orgAddress, orgContact;
     String orgId;
     Organization currentOrg;
@@ -29,12 +34,21 @@ public class OrganizationDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_organization_detail);
 
+        Button button = (Button) findViewById(R.id.buttonDonate);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrganizationDetail.this,BillingInfo.class);
+                startActivity(intent);
+            }
+        });
+
         firebaseDatabase = FirebaseDatabase.getInstance();
         organization = firebaseDatabase.getReference("organizations");
         orgName = (TextView) findViewById(R.id.org_name);
         orgDetail = (TextView) findViewById(R.id.org_detail);
         orgAddress = (TextView) findViewById(R.id.org_address);
-        orgDetail = (TextView) findViewById(R.id.org_detail);
+        orgContact = (TextView) findViewById(R.id.org_contact);
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);
         collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppBar);
@@ -46,7 +60,6 @@ public class OrganizationDetail extends AppCompatActivity {
             getOrganizationDetail(orgId);
 
         }
-
     }
 
     private void getOrganizationDetail(String orgId) {
@@ -55,9 +68,10 @@ public class OrganizationDetail extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 currentOrg = dataSnapshot.getValue(Organization.class);
                 collapsingToolbarLayout.setTitle(currentOrg.getName());
-                orgDetail.setText(currentOrg.getDetail());
-                orgAddress.setText(currentOrg.getAddress());
-                orgContact.setText(currentOrg.getContact());
+                orgName.setText(currentOrg.getName());
+                orgDetail.setText(currentOrg.getDetails());
+                orgAddress.setText("Address: "+currentOrg.getAddress());
+                orgContact.setText("Contact Number: "+currentOrg.getContact());
             }
 
             @Override

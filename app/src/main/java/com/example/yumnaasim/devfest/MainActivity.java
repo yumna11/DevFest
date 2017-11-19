@@ -89,17 +89,7 @@ public class MainActivity extends Activity {
         firebaseAuth.addAuthStateListener(authStateListener);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //this method is called before onResume() method
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RC_SIGN_IN) {
-            if (resultCode == RESULT_CANCELED) {
-//                Toast.makeText(HomeScreen.this, "Please Sign In to continue!", Toast.LENGTH_SHORT).show();
-                finish();
-            }
 
-        }
 
-    }
+
 }
