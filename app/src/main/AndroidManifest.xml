@@ -21,9 +21,26 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".OrganizationDetail" />
-        <activity android:name=".OrganizationList" />
-        <activity android:name=".BillingInfo" />
-        <activity android:name=".Thanks"></activity>
+        <activity
+            android:name=".OrganizationList"
+            android:label="Organizations" />
+        <activity
+            android:name=".BillingInfo"
+            android:label="Billing Info" />
+        <activity
+            android:name=".Thanks"
+            android:label="Thanks" />
+        <activity
+            android:name=".SignIn"
+            android:label="Sign In" />
+        <activity
+            android:name=".Account"
+            android:label="Account" />
+        <activity
+            android:name=".TabActivity"
+            android:label="@string/title_activity_tab"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Events"></activity>
     </application>
 
 </manifest>

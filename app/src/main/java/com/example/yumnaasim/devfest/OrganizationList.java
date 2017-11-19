@@ -17,7 +17,7 @@ import Interface.ItemClickListener;
 import model.Organization;
 import viewHolder.OrganizationViewHolder;
 
-public class OrganizationList extends Activity {
+public class OrganizationList extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference product;
@@ -29,6 +29,7 @@ public class OrganizationList extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setTitle("Organizations");
         setContentView(R.layout.activity_organization_list);
         recyclerView = (RecyclerView) findViewById(R.id.recyler_view);
         layoutManager = new LinearLayoutManager(this);
@@ -48,9 +49,7 @@ public class OrganizationList extends Activity {
             @Override
             protected void populateViewHolder(final OrganizationViewHolder viewHolder, final Organization model, final int position) {
                 viewHolder.orgName.setText(model.getName());
-                viewHolder.orgDetail.setText(model.getAddress());
-
-
+                viewHolder.orgDetail.setText(model.getDetails());
                 final Organization org = model;
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override

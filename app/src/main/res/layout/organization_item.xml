@@ -12,26 +12,29 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="5dp"
-            android:background="@color/colorAccent">
+           >
 
             <TextView
                 android:id="@+id/org_name"
-                android:textSize="23sp"
+                android:textSize="18sp"
                 android:text="Name of Product"
-                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+
                 />
 
             <TextView
                 android:id="@+id/organization_detail"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:text="Org Details"
-                android:textColor="@android:color/black"
+                android:textColor="#373c50"
+                android:maxLines="2"
+                android:ellipsize="end"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+
                 />
 
         </LinearLayout>

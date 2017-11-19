@@ -3,11 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <include
-        android:id="@+id/header"
-        layout="@layout/header" />
+
 
     <ImageView
         android:padding="16dp"
@@ -27,16 +26,18 @@
         android:textColor="@android:color/black"
         android:textSize="25sp"/>
 
-    <Button
-        android:textColor="@android:color/black"
-        android:id="@+id/btnExit"
-        android:layout_gravity="center"
-        android:layout_width="140dp"
+
+    <info.hoang8f.widget.FButton
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:letterSpacing="0.2"
-        android:background="@drawable/button_shape"
+        android:id="@+id/btnExit"
         android:text="EXIT"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        fbutton:buttonColor="@color/colorAccent"
+        fbutton:shadowColor="@color/colorPrimary"
+        fbutton:shadowEnabled="true"
+        android:layout_margin="16dp"
+        fbutton:shadowHeight="5dp"
+        fbutton:cornerRadius="5dp"
+        />
 
 </LinearLayout>
